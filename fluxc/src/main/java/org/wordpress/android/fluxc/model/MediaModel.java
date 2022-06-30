@@ -48,6 +48,8 @@ public class MediaModel extends Payload<BaseNetworkError> implements Identifiabl
     // Remote Url's
     @Column private String mUrl;
     @Column private String mThumbnailUrl;
+    @Column private String mLargeUrl;
+    @Column private String mMediumUrl;
 
     // File descriptors
     @Column private String mFileName;
@@ -114,6 +116,8 @@ public class MediaModel extends Payload<BaseNetworkError> implements Identifiabl
                 && StringUtils.equals(getUploadDate(), otherMedia.getUploadDate())
                 && StringUtils.equals(getUrl(), otherMedia.getUrl())
                 && StringUtils.equals(getThumbnailUrl(), otherMedia.getThumbnailUrl())
+                && StringUtils.equals(getLargeUrl(), otherMedia.getLargeUrl())
+                && StringUtils.equals(getMediumUrl(), otherMedia.getMediumUrl())
                 && StringUtils.equals(getFileName(), otherMedia.getFileName())
                 && StringUtils.equals(getFilePath(), otherMedia.getFilePath())
                 && StringUtils.equals(getFileExtension(), otherMedia.getFileExtension())
@@ -209,6 +213,22 @@ public class MediaModel extends Payload<BaseNetworkError> implements Identifiabl
 
     public String getThumbnailUrl() {
         return mThumbnailUrl;
+    }
+
+    public void setLargeUrl(String largeUrl) {
+        mLargeUrl = largeUrl;
+    }
+
+    public String getLargeUrl() {
+        return mLargeUrl;
+    }
+
+    public void setMediumUrl(String mediumUrl) {
+        mMediumUrl = mediumUrl;
+    }
+
+    public String getMediumUrl() {
+        return mMediumUrl;
     }
 
     public void setFileName(String fileName) {
